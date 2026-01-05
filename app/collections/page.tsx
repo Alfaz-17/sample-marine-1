@@ -56,7 +56,20 @@ const categories = [
   },
 ]
 
-export default function CollectionsPage() {
+import { getItemsCount } from '@/app/actions'
+import { type CollectionType } from '@/lib/item-types'
+
+export default async function CollectionsPage() {
+  const categoriesWithCounts = await Promise.all(
+    categories.map(async (cat) => {
+      const count = await getItemsCount(cat.slug as CollectionType)
+      return {
+        ...cat,
+        count: `${count} Curated Pieces` // Update count string
+      }
+    })
+  )
+
   return (
     <main className="min-h-screen bg-background">
       {/* Header */}
@@ -70,20 +83,13 @@ export default function CollectionsPage() {
               material realism, and spatial harmony.
             </p>
           </div>
-          <div className="flex gap-4 text-[10px] uppercase tracking-[0.2em] font-bold">
-            <span className="opacity-50">Filter:</span>
-            <button className="border-b border-foreground">All</button>
-            <button className="opacity-50 hover:opacity-100 transition-opacity">Flowers</button>
-            <button className="opacity-50 hover:opacity-100 transition-opacity">Greenery</button>
-            <button className="opacity-50 hover:opacity-100 transition-opacity">Editions</button>
-          </div>
         </div>
       </header>
 
       {/* Categories Grid */}
       <section className="px-6 md:px-12 pb-48">
         <div className="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-px bg-foreground/10 border-y border-foreground/10">
-          {categories.map((category) => (
+          {categoriesWithCounts.map((category) => (
             <Link
               key={category.slug}
               href={`/collections/${category.slug}`}

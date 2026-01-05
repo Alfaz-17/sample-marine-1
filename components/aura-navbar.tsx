@@ -2,6 +2,8 @@
 
 import React from 'react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
@@ -17,6 +19,7 @@ const menuItems = [
 export function AuraNavbar() {
     const [menuState, setMenuState] = React.useState(false)
     const [isScrolled, setIsScrolled] = React.useState(false)
+    const pathname = usePathname()
 
     React.useEffect(() => {
         const handleScroll = () => {
@@ -25,6 +28,11 @@ export function AuraNavbar() {
         window.addEventListener('scroll', handleScroll)
         return () => window.removeEventListener('scroll', handleScroll)
     }, [])
+
+    // Don't render the public navbar on admin pages
+    if (pathname?.startsWith('/admin')) {
+        return null
+    }
     
     return (
         <header>
@@ -32,14 +40,19 @@ export function AuraNavbar() {
                 data-state={menuState && 'active'}
                 className="fixed z-50 w-full px-2 group">
                 <div className={cn('mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12 bg-background/70 backdrop-blur-md rounded-2xl border border-primary/10', isScrolled && 'bg-background/95 max-w-4xl backdrop-blur-xl lg:px-5')}>
-                    <div className="relative flex flex-wrap items-center justify-between gap-6 py-4 lg:gap-0 lg:py-5">
+                    <div className="relative flex flex-wrap items-center justify-between gap-6 py-0 lg:gap-0 lg:py-0">
                         <div className="flex w-full justify-between lg:w-auto">
                             <Link
                                 href="/"
                                 aria-label="home"
-                                className="flex items-center space-x-3">
-                                <AuraLogo />
-                                <span className="font-serif text-xl">Aura</span>
+                                className="flex items-center space-x-3 -my-6">
+                                <Image 
+                                    src="/AuraLogo.png" 
+                                    alt="Aura House of Flowers" 
+                                    width={280} 
+                                    height={100} 
+                                    className="h-28 w-auto object-contain p-0 drop-shadow-md"
+                                />
                             </Link>
 
                             <button
@@ -103,36 +116,5 @@ export function AuraNavbar() {
                 </div>
             </nav>
         </header>
-    )
-}
-
-const AuraLogo = ({ className }: { className?: string }) => {
-    return (
-        <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            className={cn('h-6 w-6', className)}>
-            <path
-                d="M12 2L4 7v10l8 5 8-5V7l-8-5z"
-                stroke="url(#aura-gradient)"
-                strokeWidth="2"
-                strokeLinejoin="round"
-                fill="none"
-            />
-            <circle cx="12" cy="12" r="4" fill="url(#aura-gradient)" opacity="0.3" />
-            <defs>
-                <linearGradient
-                    id="aura-gradient"
-                    x1="12"
-                    y1="2"
-                    x2="12"
-                    y2="22"
-                    gradientUnits="userSpaceOnUse">
-                    <stop stopColor="oklch(0.35 0.05 120)" />
-                    <stop offset="1" stopColor="oklch(0.88 0.03 80)" />
-                </linearGradient>
-            </defs>
-        </svg>
     )
 }

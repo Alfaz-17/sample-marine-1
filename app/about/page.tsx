@@ -34,7 +34,7 @@ export default function AboutPage() {
       <section className="px-6 md:px-12 pb-24">
         <div className="max-w-screen-2xl mx-auto relative aspect-[21/9] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000">
           <Image
-            src="/luxury-interior-with-artificial-floral-installation.jpg"
+            src="/luxury-interior-with-artificial-floral-installatio.jpg"
             alt="Aura Studio"
             fill
             className="object-cover"

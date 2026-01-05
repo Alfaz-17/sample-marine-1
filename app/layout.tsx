@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Geist, Playfair_Display } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { AuraNavbar } from "@/components/aura-navbar"
+import { Providers } from "@/components/providers"
 import "./globals.css"
 
 const geist = Geist({
@@ -51,9 +52,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geist.variable} ${playfair.variable}`}>
       <body className="font-sans antialiased overflow-x-hidden">
-        <AuraNavbar />
-        {children}
-        <Analytics />
+        <Providers>
+          <AuraNavbar />
+          {children}
+          {/* <Analytics /> */}
+        </Providers>
       </body>
     </html>
   )
