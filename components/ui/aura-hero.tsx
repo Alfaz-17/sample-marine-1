@@ -84,7 +84,7 @@ export function AuraHeroSection() {
                                     <span className="italic">Recognized</span> for Quality.
                                 </h1>
                                 <p className="mx-auto mt-8 max-w-2xl text-balance text-lg text-muted-foreground font-light leading-loose">
-                                    Premium distributor of curated artificial floral décor and botanical elements for modern interiors. Where nature meets considered design.
+                                    18 years premium artificial florals for modern interiors. Premium distributor of curated artificial floral décor and botanical elements.
                                 </p>
                             </AnimatedGroup>
 

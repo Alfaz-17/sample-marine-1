@@ -40,7 +40,9 @@ export default function ContactPage() {
                 <div className="space-y-1">
                   <p className="text-[11px] uppercase tracking-[0.2em] font-bold">Location</p>
                   <p className="text-sm font-light text-muted-foreground leading-relaxed">
-                    Bhavnagar, Gujarat
+                    DEVVAN COMPLEX, G-6, Atabhai Rd
+                    <br />
+                    Bhavnagar, Gujarat 364001
                     <br />
                     India
                   </p>
@@ -65,10 +67,10 @@ export default function ContactPage() {
                 <div className="space-y-1">
                   <p className="text-[11px] uppercase tracking-[0.2em] font-bold">Email</p>
                   <a
-                    href="mailto:info@auraflowers.com"
+                    href="mailto:info@aurahouseofflowers.com"
                     className="text-sm font-light text-muted-foreground hover:text-foreground transition-colors"
                   >
-                    info@auraflowers.com
+                    info@aurahouseofflowers.com
                   </a>
                 </div>
               </div>
@@ -78,12 +80,21 @@ export default function ContactPage() {
                 <div className="space-y-1">
                   <p className="text-[11px] uppercase tracking-[0.2em] font-bold">Instagram</p>
                   <a
+                    href="https://www.instagram.com/aurahouseofflowers"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-light text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    @aurahouseofflowers
+                  </a>
+                  <br />
+                  <a
                     href="https://www.instagram.com/gujarat_florist"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm font-light text-muted-foreground hover:text-foreground transition-colors"
                   >
-                    @gujarat_florist
+                    @gujarat_florist (Wedding Services)
                   </a>
                 </div>
               </div>
