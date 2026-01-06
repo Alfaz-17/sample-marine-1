@@ -64,7 +64,7 @@ export function AuraHeroSection() {
                         variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } } }}
                         className="text-lg md:text-xl text-muted-foreground/80 font-light leading-relaxed max-w-lg mx-auto lg:mx-0 italic"
                     >
-                        Where every bloom tells your story ✨
+                        Where every bloom tells your story 
                     </motion.p>
 
                     <motion.div 
