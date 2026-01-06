@@ -6,11 +6,11 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="pt-32 md:pt-48 pb-24 px-6 md:px-12 bg-white">
+      <section className="pt-32 md:pt-48 pb-24 px-6 md:px-12 bg-background">
         <div className="max-w-screen-2xl mx-auto">
           <div className="max-w-3xl mx-auto text-center space-y-8">
             <span className="text-[11px] uppercase tracking-[0.4em] text-primary font-bold">Get in Touch</span>
-            <h1 className="font-serif text-5xl md:text-8xl leading-none">
+            <h1 className="font-serif text-5xl md:text-8xl leading-none text-primary">
               Let's Create Something <span className="italic">Beautiful</span>
             </h1>
             <p className="text-lg text-muted-foreground font-light leading-loose max-w-2xl mx-auto">

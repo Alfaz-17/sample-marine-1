@@ -26,7 +26,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
           </Link>
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
             <div className="space-y-4">
-              <h1 className="font-serif text-4xl md:text-6xl">{title}</h1>
+              <h1 className="font-serif text-4xl md:text-6xl text-primary">{title}</h1>
               <p className="text-sm text-muted-foreground font-light max-w-xl leading-relaxed">
                 Each piece is carefully curated for material realism and spatial harmony. Perfect for interior
                 designers, architects, and discerning homeowners.

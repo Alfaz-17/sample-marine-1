@@ -1,16 +1,22 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Instagram } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="bg-white border-t px-6 md:px-12 pt-24 pb-12">
+    <footer className="bg-background border-t px-6 md:px-12 pt-24 pb-12">
       <div className="max-w-screen-2xl mx-auto space-y-24">
         {/* Top Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="space-y-8">
             <Link href="/" className="flex flex-col group">
-              <span className="font-serif text-3xl tracking-tight leading-none">Aura</span>
-              <span className="text-[9px] uppercase tracking-[0.4em] mt-1 text-muted-foreground">House of Flowers</span>
+              <Image 
+                  src="/logo.png" 
+                  alt="Aura House of Flowers" 
+                  width={200}
+                  height={80}
+                  className="w-48 h-auto object-contain -ml-2"
+              />
             </Link>
             <p className="text-sm text-muted-foreground leading-relaxed max-w-xs font-light">
               Premium distributor of curated botanical elements for modern interiors. Recognized for quality since 2008.

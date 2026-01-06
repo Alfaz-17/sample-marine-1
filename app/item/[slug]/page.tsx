@@ -61,7 +61,7 @@ export default async function ItemPage({ params }: { params: Promise<{ slug: str
                 <p className="text-[10px] uppercase tracking-[0.2em] text-primary font-bold">
                   {item.collection.split('-').map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
                 </p>
-                <h1 className="font-serif text-4xl md:text-6xl leading-tight">{item.title}</h1>
+                <h1 className="font-serif text-4xl md:text-6xl leading-tight text-primary">{item.title}</h1>
                 {item.price && (
                   <p className="text-2xl font-serif italic">Rs. {item.price}</p>
                 )}

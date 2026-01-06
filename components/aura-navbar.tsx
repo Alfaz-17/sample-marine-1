@@ -47,11 +47,11 @@ export function AuraNavbar() {
                                 aria-label="home"
                                 className="flex items-center space-x-3 -my-6">
                                 <Image 
-                                    src="/AuraLogo.png" 
+                                    src="/logo.png" 
                                     alt="Aura House of Flowers" 
                                     width={280} 
                                     height={100} 
-                                    className="h-28 w-auto object-contain p-0 drop-shadow-md"
+                                    className="h-30 w-auto object-contain my-[-10] p-0 drop-shadow-md"
                                 />
                             </Link>
 
@@ -70,7 +70,7 @@ export function AuraNavbar() {
                                     <li key={index}>
                                         <Link
                                             href={item.href}
-                                            className="text-muted-foreground hover:text-foreground block duration-150 font-medium">
+                                            className="text-muted-foreground hover:text-primary block duration-150 font-medium">
                                             <span>{item.name}</span>
                                         </Link>
                                     </li>

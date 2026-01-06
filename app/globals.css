@@ -3,11 +3,12 @@
 
 @custom-variant dark (&:is(.dark *));
 
+:root {
   /* ===== Aura – House of Flowers (Consistent Brand Palette) ===== */
 
-  /* Backgrounds: Warm & Clean */
-  --background: oklch(0.99 0.01 95); /* Porcelain White */
-  --foreground: oklch(0.20 0.05 265); /* Deep Blue-Black text */
+  /* Backgrounds: Porcelain White & Deep Blue-Black */
+  --background: oklch(0.99 0.01 95); 
+  --foreground: oklch(0.20 0.05 265); 
 
   --card: oklch(1.0 0 0);
   --card-foreground: oklch(0.20 0.05 265);
@@ -15,35 +16,39 @@
   --popover: oklch(1.0 0 0);
   --popover-foreground: oklch(0.20 0.05 265);
 
-  /* Primary: The Shop Identity (Royal Blue) */
-  --primary: oklch(0.32 0.18 270); /* Deep Royal Blue */
-  --primary-foreground: oklch(0.98 0.02 95); /* White Text on Blue */
+  /* Primary: Deep Royal Blue */
+  --primary: oklch(0.32 0.18 270);
+  --primary-foreground: oklch(0.98 0.02 95);
 
-  /* Secondary: The Logo (Luxurious Gold) */
-  /* Used for specialized backgrounds (tinted) or distinctive text */
-  --secondary: oklch(0.75 0.16 85); /* Rich Gold/Amber */
-  --secondary-foreground: oklch(0.20 0.05 265); /* Dark Text on Gold */
+  /* Secondary: Luxurious Gold */
+  --secondary: oklch(0.75 0.16 85);
+  --secondary-foreground: oklch(0.20 0.05 265);
 
-  /* Accent: The Atmosphere (Soft Peach/Drapes) */
-  /* Used for highlights, subtle gradients, and warm touches */
-  --accent: oklch(0.82 0.12 55); /* Soft Warm Peach */
+  /* Accent: Soft Peach */
+  --accent: oklch(0.82 0.12 55);
   --accent-foreground: oklch(0.20 0.05 265);
 
-  /* Muted: Subtle Support */
+  /* Muted Support */
   --muted: oklch(0.96 0.01 95);
-  --muted-foreground: oklch(0.50 0.05 265); /* Muted Blue-Grey */
+  --muted-foreground: oklch(0.50 0.05 265);
 
   --destructive: oklch(0.55 0.20 25);
   --destructive-foreground: oklch(0.98 0.00 0);
 
   --border: oklch(0.92 0.01 95);
   --input: oklch(0.92 0.01 95);
-  --ring: oklch(0.32 0.18 270); /* Blue Focus Ring */
+  --ring: oklch(0.32 0.18 270);
 
-  /* Radius: Consistent Softness */
   --radius: 0.75rem;
 
-  /* Sidebar (Admin Consistency) */
+  /* Charts */
+  --chart-1: oklch(0.32 0.18 270);
+  --chart-2: oklch(0.75 0.16 85);
+  --chart-3: oklch(0.82 0.12 55);
+  --chart-4: oklch(0.60 0.18 135);
+  --chart-5: oklch(0.92 0.08 65);
+
+  /* Sidebar */
   --sidebar: oklch(0.98 0.01 95);
   --sidebar-foreground: oklch(0.20 0.05 265);
   --sidebar-primary: oklch(0.32 0.18 270);
@@ -58,39 +63,45 @@
   /* ===== Dark Mode – Premium Night Boutique ===== */
 
   --background: oklch(0.13 0.05 270); /* Deep Navy */
-  --foreground: oklch(0.97 0.02 95);
+  --foreground: oklch(0.98 0.01 95);
 
   --card: oklch(0.16 0.05 270);
-  --card-foreground: oklch(0.97 0.02 95);
+  --card-foreground: oklch(0.98 0.01 95);
 
   --popover: oklch(0.13 0.05 270);
-  --popover-foreground: oklch(0.97 0.02 95);
+  --popover-foreground: oklch(0.98 0.01 95);
 
   --primary: oklch(0.55 0.22 270); /* Glowing Royal Blue */
   --primary-foreground: oklch(0.12 0.04 270);
 
-  --secondary: oklch(0.28 0.06 270);
-  --secondary-foreground: oklch(0.97 0.02 95);
+  --secondary: oklch(0.75 0.16 85); /* Gold remains gold */
+  --secondary-foreground: oklch(0.20 0.05 265);
+
+  --accent: oklch(0.82 0.12 55); /* Peach remains peach */
+  --accent-foreground: oklch(0.20 0.05 265);
 
   --muted: oklch(0.22 0.05 270);
   --muted-foreground: oklch(0.70 0.04 270);
 
-  --accent: oklch(0.62 0.20 135);
-  --accent-foreground: oklch(0.12 0.04 270);
-
   --destructive: oklch(0.58 0.20 28);
-  --destructive-foreground: oklch(0.97 0.02 95);
+  --destructive-foreground: oklch(0.98 0.01 95);
 
   --border: oklch(0.25 0.05 270);
   --input: oklch(0.25 0.05 270);
   --ring: oklch(0.55 0.22 270);
 
+  --chart-1: oklch(0.55 0.22 270);
+  --chart-2: oklch(0.75 0.16 85);
+  --chart-3: oklch(0.82 0.12 55);
+  --chart-4: oklch(0.62 0.20 135);
+  --chart-5: oklch(0.90 0.08 60);
+
   --sidebar: oklch(0.14 0.05 270);
-  --sidebar-foreground: oklch(0.97 0.02 95);
+  --sidebar-foreground: oklch(0.98 0.01 95);
   --sidebar-primary: oklch(0.55 0.22 270);
   --sidebar-primary-foreground: oklch(0.12 0.04 270);
   --sidebar-accent: oklch(0.22 0.05 270);
-  --sidebar-accent-foreground: oklch(0.97 0.02 95);
+  --sidebar-accent-foreground: oklch(0.98 0.01 95);
   --sidebar-border: oklch(0.25 0.05 270);
   --sidebar-ring: oklch(0.55 0.22 270);
 }

@@ -13,7 +13,7 @@ export function AuraHeroSection() {
     const y2 = useTransform(scrollY, [0, 500], [0, -150]);
 
     return (
-        <main className="relative bg-background overflow-hidden min-h-[95vh] flex items-center justify-center pt-20 pb-16 lg:pt-0 lg:pb-0">
+        <main className="relative bg-background overflow-hidden min-h-[95vh] flex items-center justify-center pt-32 pb-16 lg:pt-32 lg:pb-0">
              {/* Cinematic Background Elements */}
              <div className="absolute top-0 right-0 w-[60%] h-full bg-secondary/10 rounded-l-[150px] -z-10 hidden lg:block backdrop-blur-3xl" />
              <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-[120px] -z-10" />
@@ -85,9 +85,9 @@ export function AuraHeroSection() {
                     initial={{ opacity: 0, scale: 0.9, filter: "blur(20px)" }}
                     animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
                     transition={{ duration: 1.2, ease: "easeOut" }}
-                    className="relative perspective-1000"
+                    className="relative perspective-1000 mt-12 lg:mt-0"
                 >
-                    <div className="relative aspect-[4/5] md:aspect-[3.5/4] lg:aspect-[4/5] w-full max-w-xl mx-auto rounded-[2.5rem] overflow-hidden shadow-2xl shadow-primary/20 border-[8px] border-white ring-1 ring-black/5 group cursor-none">
+                    <div className="relative aspect-[4/5] md:aspect-[3.5/4] lg:aspect-[4/5] w-full max-w-xl mx-auto rounded-[2.5rem] overflow-hidden shadow-2xl shadow-primary/20 border-[8px] border-white ring-1 ring-black/5 group">
                         
                         {/* The Cinematic Image with 'Ken Burns' effect (Slow Zoom) */}
                         <motion.div 

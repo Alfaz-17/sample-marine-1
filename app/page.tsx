@@ -62,32 +62,32 @@ export default function Home() {
               {
                 title: "Faux Botanicals",
                 description: "Lifelike realism",
-                image: "/minimal-botanical-arrangement-on-stone.jpg",
+                image: "/collection_faux_botanicals.png",
               },
               {
                 title: "Interior Trees",
                 description: "Height & presence",
-                image: "/luxury-interior-with-artificial-floral-installatio.jpg",
+                image: "/collection_interior_trees.png",
               },
               {
                 title: "Wall Installations",
                 description: "Artistic greenery",
-                image: "/large-artificial-floral-installation-wall.jpg",
+                image: "/collection_wall_installation.png",
               },
               {
                 title: "Tabletop Accents",
                 description: "Finishing touches",
-                image: "/luxury-artificial-orchid-arrangement.jpg",
+                image: "/collection_tabletop_accents.png",
               },
               {
                 title: "Ceramic Vessels",
                 description: "Handcrafted pots",
-                image: "/ceramic-gradient-pot-minimal.jpg",
+                image: "/collection_ceramic_vessels.png",
               },
               {
                   title: "Signature Concepts",
                   description: "Bespoke designs",
-                  image: "/minimal-handcrafted-console-table.jpg"
+                  image: "/collection_signature_concepts.png"
               }
             ].map((item, idx) => (
               <Link
@@ -121,7 +121,7 @@ export default function Home() {
         <div className="grid lg:grid-cols-2 min-h-[80vh]">
             <div className="relative h-[50vh] lg:h-auto overflow-hidden">
                 <Image 
-                    src="/botanical-close-up.jpg" 
+                    src="/signature_series_detail.png" 
                     alt="Signature Detail" 
                     fill 
                     className="object-cover"
