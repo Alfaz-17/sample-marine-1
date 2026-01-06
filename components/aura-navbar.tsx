@@ -4,7 +4,7 @@ import React from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import Image from 'next/image'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Instagram, Sparkles, Home, Layers, PenTool, Heart, Info } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -128,41 +128,97 @@ export function AuraNavbar() {
                             animate={{ x: 0 }}
                             exit={{ x: "100%" }}
                             transition={{ type: "spring", bounce: 0, duration: 0.4 }}
-                            className="fixed top-0 right-0 z-40 h-screen w-[80%] max-w-sm bg-background/90 backdrop-blur-2xl border-l border-primary/10 shadow-2xl lg:hidden p-8 pt-32"
+                            className="fixed top-0 right-0 z-40 h-screen w-[85%] max-w-sm bg-gradient-to-br from-background via-background/95 to-primary/5 backdrop-blur-2xl border-l border-primary/20 shadow-2xl lg:hidden overflow-hidden"
                         >
-                            <div className="flex flex-col h-full justify-between">
-                                <ul className="space-y-8">
+                            {/* Decorative gradient orbs */}
+                            <div className="absolute -top-24 -right-24 w-48 h-48 bg-primary/20 rounded-full blur-3xl" />
+                            <div className="absolute top-1/2 -left-24 w-48 h-48 bg-purple-500/10 rounded-full blur-3xl" />
+                            
+                            <div className="relative flex flex-col h-full p-8 pt-28">
+                                {/* Menu Items */}
+                                <nav className="flex-1 space-y-2">
                                     {menuItems.map((item, index) => {
                                         const isActive = pathname === item.href
+                                        const icons = [Home, Layers, Sparkles, Heart, Info]
+                                        const Icon = icons[index]
+                                        
                                         return (
-                                            <motion.li 
+                                            <motion.div
                                                 key={index}
                                                 initial={{ opacity: 0, x: 20 }}
                                                 animate={{ opacity: 1, x: 0 }}
-                                                transition={{ delay: 0.1 + index * 0.1 }}
+                                                transition={{ delay: 0.1 + index * 0.08 }}
                                             >
                                                 <Link
                                                     href={item.href}
                                                     onClick={() => setMenuState(false)}
                                                     className={cn(
-                                                        "block text-2xl font-serif tracking-tight transition-colors",
-                                                        isActive ? "text-primary italic" : "text-muted-foreground hover:text-foreground"
+                                                        "group flex items-center gap-4 px-4 py-3.5 rounded-xl transition-all duration-300",
+                                                        isActive 
+                                                            ? "bg-primary/10 text-primary shadow-lg shadow-primary/10" 
+                                                            : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
                                                     )}
                                                 >
-                                                    {item.name}
+                                                    <div className={cn(
+                                                        "flex items-center justify-center w-10 h-10 rounded-lg transition-all duration-300",
+                                                        isActive 
+                                                            ? "bg-primary/20 text-primary" 
+                                                            : "bg-muted/50 text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary"
+                                                    )}>
+                                                        <Icon className="w-5 h-5" />
+                                                    </div>
+                                                    <span className="text-lg font-serif tracking-tight">{item.name}</span>
+                                                    {isActive && (
+                                                        <motion.div
+                                                            layoutId="activeDot"
+                                                            className="ml-auto w-2 h-2 rounded-full bg-primary"
+                                                            transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                                                        />
+                                                    )}
                                                 </Link>
-                                            </motion.li>
+                                            </motion.div>
                                         )
                                     })}
-                                </ul>
+                                </nav>
 
-                                <div className="space-y-6">
-                                     <div className="h-px w-full bg-primary/10" />
-                                     <div className="flex flex-col gap-4">
-                                        <p className="text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Follow Us</p>
-                                        <Link href="#" className="font-serif text-lg text-primary hover:opacity-80">@aurahouseofflowers</Link>
-                                     </div>
-                                </div>
+                                {/* Bottom Section */}
+                                <motion.div 
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: 0.5 }}
+                                    className="space-y-5 pt-6"
+                                >
+                                    <div className="h-px w-full bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+                                    
+                                    {/* Contact Button */}
+                                    <Button
+                                        asChild
+                                        variant="outline"
+                                        className="w-full justify-start gap-3 h-12 text-sm border-primary/20 hover:bg-primary/5 hover:border-primary/30"
+                                    >
+                                        <Link href="/contact">
+                                            <PenTool className="w-4 h-4" />
+                                            Get in Touch
+                                        </Link>
+                                    </Button>
+
+                                    {/* Instagram CTA */}
+                                    <Link 
+                                        href="https://www.instagram.com/aurahouseofflowers/" 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-3 p-4 rounded-xl bg-gradient-to-r from-pink-500/10 via-purple-500/10 to-primary/10 border border-primary/20 hover:border-primary/30 transition-all duration-300 group"
+                                    >
+                                        <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br from-pink-500 to-purple-600 text-white shadow-lg shadow-pink-500/20 group-hover:scale-110 transition-transform duration-300">
+                                            <Instagram className="w-5 h-5" />
+                                        </div>
+                                        <div className="flex-1">
+                                            <p className="text-[10px] uppercase tracking-[0.15em] text-muted-foreground font-medium">Follow Us</p>
+                                            <p className="text-sm font-serif text-foreground">@aurahouseofflowers</p>
+                                        </div>
+                                        <Sparkles className="w-4 h-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                    </Link>
+                                </motion.div>
                             </div>
                         </motion.div>
                     </>

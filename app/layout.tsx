@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Geist, Playfair_Display } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { AuraNavbar } from "@/components/aura-navbar"
+import { WhatsAppFloat } from "@/components/whatsapp-float"
 import { Providers } from "@/components/providers"
 import "./globals.css"
 
@@ -64,6 +65,7 @@ export default function RootLayout({
         <Providers>
           <AuraNavbar />
           {children}
+          <WhatsAppFloat />
           {/* <Analytics /> */}
         </Providers>
       </body>
