@@ -93,7 +93,7 @@ export default async function CollectionsPage() {
             <Link
               key={category.slug}
               href={`/collections/${category.slug}`}
-              className="group relative bg-background p-8 md:p-12 lg:p-20 overflow-hidden"
+              className="group relative bg-background p-8 md:p-12 lg:p-20 overflow-hidden hover:bg-primary/5 active:bg-primary/10 transition-colors duration-300"
             >
               <div className="relative z-10 space-y-8 h-full flex flex-col justify-between">
                 <div className="space-y-4">
@@ -104,24 +104,24 @@ export default async function CollectionsPage() {
                       {category.priceRange}
                     </p>
                   </div>
-                  <h2 className="font-serif text-4xl md:text-5xl group-hover:italic transition-all duration-500">
+                  <h2 className="font-serif text-4xl md:text-5xl group-hover:italic group-active:italic transition-all duration-500">
                     {category.title}
                   </h2>
                   <p className="text-sm font-medium italic text-primary">{category.tagline}</p>
-                  <p className="text-muted-foreground font-light leading-relaxed max-w-xs transition-opacity duration-500 group-hover:opacity-100 opacity-60">
+                  <p className="text-muted-foreground font-light leading-relaxed max-w-xs transition-opacity duration-500 group-hover:opacity-100 group-active:opacity-100 opacity-60">
                     {category.description}
                   </p>
                 </div>
                 <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] font-bold">
-                  Explore Series <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                  Explore Series <ChevronRight size={14} className="group-hover:translate-x-1 group-active:translate-x-1 transition-transform" />
                 </div>
               </div>
-              <div className="absolute right-0 top-0 bottom-0 w-1/3 md:w-1/2 opacity-20 md:opacity-10 lg:opacity-5 group-hover:opacity-100 transition-all duration-1000">
+              <div className="absolute right-0 top-0 bottom-0 w-1/3 md:w-1/2 opacity-20 md:opacity-10 lg:opacity-5 group-hover:opacity-100 group-active:opacity-80 transition-all duration-1000">
                 <Image
                   src={category.image || "/placeholder.svg"}
                   alt={category.title}
                   fill
-                  className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                  className="object-cover transition-transform duration-1000 group-hover:scale-110 group-active:scale-105"
                 />
               </div>
             </Link>

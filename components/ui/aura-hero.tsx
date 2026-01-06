@@ -71,13 +71,13 @@ export function AuraHeroSection() {
                         variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } } }}
                         className="flex flex-col sm:flex-row items-center gap-6 justify-center lg:justify-start pt-4"
                     >
-                        <Button asChild size="lg" className="rounded-full h-16 px-10 bg-primary text-primary-foreground hover:bg-primary/90 text-xs uppercase tracking-[0.2em] font-bold shadow-2xl shadow-primary/25 hover:scale-105 transition-transform duration-300">
+                        <Button asChild size="lg" className="rounded-full h-16 px-10 bg-primary text-primary-foreground hover:bg-primary/90 active:bg-primary/80 text-xs uppercase tracking-[0.2em] font-bold shadow-2xl shadow-primary/25 hover:scale-105 active:scale-100 transition-transform duration-300">
                             <Link href="/collections">
                                 Shop Collections
                             </Link>
                         </Button>
-                        <Link href="/contact" className="group flex items-center gap-3 text-primary font-semibold text-xs uppercase tracking-[0.2em] hover:opacity-70 transition-opacity">
-                            <div className="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                        <Link href="/contact" className="group flex items-center gap-3 text-primary font-semibold text-xs uppercase tracking-[0.2em] hover:opacity-70 active:opacity-50 transition-opacity">
+                            <div className="w-12 h-12 rounded-full border border-primary/20 flex items-center justify-center group-hover:bg-primary group-hover:text-white group-active:bg-primary/80 transition-all duration-300">
                                 <ArrowRight size={14} className="ml-0.5" />
                             </div>
                             Visit Studio

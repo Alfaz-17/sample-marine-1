@@ -156,7 +156,7 @@ export function AuraNavbar() {
                                                         "group flex items-center gap-4 px-4 py-3.5 rounded-xl transition-all duration-300",
                                                         isActive 
                                                             ? "bg-primary/10 text-primary shadow-lg shadow-primary/10" 
-                                                            : "text-muted-foreground hover:text-foreground hover:bg-primary/5"
+                                                            : "text-muted-foreground hover:text-foreground hover:bg-primary/5 active:bg-primary/10"
                                                     )}
                                                 >
                                                     <div className={cn(
@@ -194,7 +194,7 @@ export function AuraNavbar() {
                                     <Button
                                         asChild
                                         variant="outline"
-                                        className="w-full justify-start gap-3 h-12 text-sm border-primary/20 hover:bg-primary/5 hover:border-primary/30"
+                                        className="w-full justify-start gap-3 h-12 text-sm border-primary/20 hover:bg-primary/5 hover:border-primary/30 active:bg-primary/10 active:border-primary/40"
                                     >
                                         <Link href="/contact">
                                             <PenTool className="w-4 h-4" />
@@ -207,9 +207,9 @@ export function AuraNavbar() {
                                         href="https://www.instagram.com/aurahouseofflowers/" 
                                         target="_blank" 
                                         rel="noopener noreferrer"
-                                        className="flex items-center gap-3 p-4 rounded-xl bg-gradient-to-r from-pink-500/10 via-purple-500/10 to-primary/10 border border-primary/20 hover:border-primary/30 transition-all duration-300 group"
+                                        className="flex items-center gap-3 p-4 rounded-xl bg-gradient-to-r from-pink-500/10 via-purple-500/10 to-primary/10 border border-primary/20 hover:border-primary/30 active:border-primary/40 active:bg-gradient-to-r active:from-pink-500/20 active:via-purple-500/20 active:to-primary/20 transition-all duration-300 group"
                                     >
-                                        <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br from-pink-500 to-purple-600 text-white shadow-lg shadow-pink-500/20 group-hover:scale-110 transition-transform duration-300">
+                                        <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-gradient-to-br from-pink-500 to-purple-600 text-white shadow-lg shadow-pink-500/20 group-hover:scale-110 group-active:scale-105 transition-transform duration-300">
                                             <Instagram className="w-5 h-5" />
                                         </div>
                                         <div className="flex-1">
