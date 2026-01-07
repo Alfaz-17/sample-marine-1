@@ -41,18 +41,14 @@ export default async function AdminLayout({
       {/* Admin Header */}
       <header className="sticky top-0 z-40 w-full border-b border-foreground/10 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-6 py-4">
         <div className="max-w-screen-2xl mx-auto flex items-center justify-between">
-import Image from 'next/image'
-
-// ...
-
           <div className="flex items-center gap-8">
-            <Link href="/admin/dashboard" className="font-serif text-2xl">
+            <Link href="/admin/dashboard" className="flex items-center">
               <Image 
-                src="/AuraLogo.png" 
-                alt="Aura Admin" 
-                width={80} 
+                src="/logo.png" 
+                alt="Aura Flowers - Admin Panel" 
+                width={200} 
                 height={80} 
-                className="h-8 w-auto object-contain"
+                className="h-16 w-auto object-contain drop-shadow-md"
               />
             </Link>
             <AdminNav />

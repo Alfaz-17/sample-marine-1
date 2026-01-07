@@ -87,7 +87,8 @@ export function AuraHeroSection() {
 
                 {/* Visual Content - Cinematic Frame with Advanced Animations */}
                 <motion.div 
-                    style={{ y: y1 }}
+                    suppressHydrationWarning
+                    style={{ y: y1, perspective: "2000px", transformStyle: "preserve-3d" }}
                     initial={{ opacity: 0, scale: 0.9, rotateY: -15, filter: "blur(20px)" }}
                     animate={{ 
                         opacity: 1, 
@@ -112,7 +113,6 @@ export function AuraHeroSection() {
                         transition: { duration: 0.5 }
                     }}
                     className="relative mt-12 lg:mt-0"
-                    style={{ perspective: "2000px", transformStyle: "preserve-3d" }}
                 >
                     <div className="relative aspect-[4/5] md:aspect-[3.5/4] lg:aspect-[4/5] w-full max-w-xl mx-auto rounded-[2.5rem] overflow-hidden shadow-2xl shadow-primary/20 border-[8px] border-white ring-1 ring-black/5 group">
                         
@@ -157,10 +157,11 @@ export function AuraHeroSection() {
                         />
 
                          {/* Floating Particles Effect */}
-                        <div className="absolute inset-0 pointer-events-none">
+                        <div className="absolute inset-0 pointer-events-none" suppressHydrationWarning>
                             {[...Array(5)].map((_, i) => (
                                 <motion.div
                                     key={i}
+                                    suppressHydrationWarning
                                     className="absolute w-2 h-2 bg-white/40 rounded-full blur-sm"
                                     style={{
                                         left: `${20 + i * 15}%`,
