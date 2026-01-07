@@ -85,21 +85,42 @@ export function AuraHeroSection() {
                     </motion.div>
                 </motion.div>
 
-                {/* Visual Content - Cinematic Frame */}
+                {/* Visual Content - Cinematic Frame with Advanced Animations */}
                 <motion.div 
                     style={{ y: y1 }}
-                    initial={{ opacity: 0, scale: 0.9, filter: "blur(20px)" }}
-                    animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-                    transition={{ duration: 1.2, ease: "easeOut" }}
-                    className="relative perspective-1000 mt-12 lg:mt-0"
+                    initial={{ opacity: 0, scale: 0.9, rotateY: -15, filter: "blur(20px)" }}
+                    animate={{ 
+                        opacity: 1, 
+                        scale: 1, 
+                        rotateY: 0,
+                        filter: "blur(0px)",
+                        y: [0, -20, 0]
+                    }}
+                    transition={{ 
+                        duration: 1.2, 
+                        ease: "easeOut",
+                        y: {
+                            duration: 4,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                        }
+                    }}
+                    whileHover={{
+                        rotateY: 5,
+                        rotateX: 5,
+                        scale: 1.02,
+                        transition: { duration: 0.5 }
+                    }}
+                    className="relative mt-12 lg:mt-0"
+                    style={{ perspective: "2000px", transformStyle: "preserve-3d" }}
                 >
                     <div className="relative aspect-[4/5] md:aspect-[3.5/4] lg:aspect-[4/5] w-full max-w-xl mx-auto rounded-[2.5rem] overflow-hidden shadow-2xl shadow-primary/20 border-[8px] border-white ring-1 ring-black/5 group">
                         
-                        {/* The Cinematic Image with 'Ken Burns' effect (Slow Zoom) */}
+                        {/* The Cinematic Image with Enhanced Zoom + Parallax */}
                         <motion.div 
-                            className="relative w-full h-full"
-                            whileHover={{ scale: 1.1 }}
-                            transition={{ duration: 8, ease: "linear" }}
+                            className="relative w-full h-full overflow-hidden"
+                            whileHover={{ scale: 1.15 }}
+                            transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
                         >
                              <Image
                                 src="/main-refined.png" 
@@ -108,19 +129,99 @@ export function AuraHeroSection() {
                                 className="object-cover"
                                 priority
                             />
+                            
+                            {/* Animated Shimmer Effect */}
+                            <motion.div
+                                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                                initial={{ x: "-100%" }}
+                                animate={{ x: "200%" }}
+                                transition={{
+                                    duration: 3,
+                                    repeat: Infinity,
+                                    repeatDelay: 2,
+                                    ease: "easeInOut"
+                                }}
+                            />
                         </motion.div>
 
                         {/* Cinematic Vignette Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 pointer-events-none" />
                         <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-transparent opacity-40 pointer-events-none" />
+                        
+                        {/* Glowing Border Effect on Hover */}
+                        <motion.div 
+                            className="absolute inset-0 rounded-[2.5rem] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                            style={{
+                                boxShadow: "inset 0 0 40px rgba(255,255,255,0.3), 0 0 60px rgba(167,139,250,0.4)"
+                            }}
+                        />
 
-                         {/* Floating Glass Card */}
+                         {/* Floating Particles Effect */}
+                        <div className="absolute inset-0 pointer-events-none">
+                            {[...Array(5)].map((_, i) => (
+                                <motion.div
+                                    key={i}
+                                    className="absolute w-2 h-2 bg-white/40 rounded-full blur-sm"
+                                    style={{
+                                        left: `${20 + i * 15}%`,
+                                        top: `${30 + i * 10}%`
+                                    }}
+                                    animate={{
+                                        y: [0, -100, 0],
+                                        opacity: [0, 0.8, 0],
+                                        scale: [0, 1.5, 0]
+                                    }}
+                                    transition={{
+                                        duration: 3 + i * 0.5,
+                                        repeat: Infinity,
+                                        delay: i * 0.8,
+                                        ease: "easeInOut"
+                                    }}
+                                />
+                            ))}
+                        </div>
                        
                     </div>
                     
-                    {/* Abstract Floating Orbs for Depth */}
-                    <div className="absolute -bottom-16 -right-16 w-64 h-64 bg-accent/20 rounded-full blur-[80px] -z-10 mix-blend-multiply" />
-                    <div className="absolute -top-16 -left-16 w-64 h-64 bg-secondary/30 rounded-full blur-[80px] -z-10 mix-blend-multiply" />
+                    {/* Enhanced Abstract Floating Orbs with Animation */}
+                    <motion.div 
+                        className="absolute -bottom-16 -right-16 w-64 h-64 bg-accent/20 rounded-full blur-[80px] -z-10 mix-blend-multiply"
+                        animate={{
+                            scale: [1, 1.2, 1],
+                            opacity: [0.2, 0.4, 0.2]
+                        }}
+                        transition={{
+                            duration: 5,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                        }}
+                    />
+                    <motion.div 
+                        className="absolute -top-16 -left-16 w-64 h-64 bg-secondary/30 rounded-full blur-[80px] -z-10 mix-blend-multiply"
+                        animate={{
+                            scale: [1, 1.3, 1],
+                            opacity: [0.3, 0.5, 0.3]
+                        }}
+                        transition={{
+                            duration: 6,
+                            repeat: Infinity,
+                            ease: "easeInOut",
+                            delay: 0.5
+                        }}
+                    />
+                    
+                    {/* Additional Depth Layer */}
+                    <motion.div 
+                        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-to-br from-primary/10 to-accent/10 rounded-[2.5rem] blur-3xl -z-20"
+                        animate={{
+                            rotate: [0, 360],
+                        }}
+                        transition={{
+                            duration: 20,
+                            repeat: Infinity,
+                            ease: "linear"
+                        }}
+                    />
                 </motion.div>
             </div>
         </main>

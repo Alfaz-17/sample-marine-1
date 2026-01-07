@@ -9,36 +9,122 @@ export default function Home() {
     <main className="min-h-screen bg-background text-foreground transition-colors duration-500">
       <AuraHeroSection />
 
-      {/* Brand Values / Trust Section */}
-      <section className="py-24 px-6 md:px-12 bg-white relative">
-        <div className="max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
-            <div className="space-y-4 p-8 rounded-3xl bg-secondary/10 hover:bg-secondary/20 transition-colors">
-                <div className="w-12 h-12 rounded-full bg-white border border-secondary flex items-center justify-center text-primary shadow-sm mb-6 mx-auto md:mx-0">
-                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      {/* Brand Values / Trust Section - Dynamic & Engaging */}
+      <section className="py-32 px-6 md:px-12 bg-gradient-to-b from-white via-secondary/10 to-white relative overflow-hidden">
+        {/* Decorative Elements */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-accent/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        
+        <div className="max-w-screen-xl mx-auto relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-20 space-y-6">
+            <span className="inline-block px-4 py-2 rounded-full border border-primary/20 text-[10px] uppercase tracking-[0.3em] font-bold text-primary bg-white/80 backdrop-blur-sm shadow-sm">
+              Why Choose Aura
+            </span>
+            <h2 className="font-serif text-4xl md:text-5xl text-primary">
+              Crafted with <span className="italic text-accent">Purpose</span>
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Every piece tells a story of dedication, artistry, and an unwavering commitment to excellence
+            </p>
+          </div>
+
+          {/* Value Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Card 1 */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-primary/20 rounded-[2rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative h-full p-10 rounded-[2rem] bg-white border border-border shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 space-y-6">
+                {/* Number Badge */}
+                <div className="flex items-start justify-between">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center text-accent text-sm font-bold border border-accent/20">
+                    01
+                  </div>
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent/10 to-transparent flex items-center justify-center text-accent transform group-hover:rotate-12 group-hover:scale-110 transition-transform duration-500">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                  </div>
                 </div>
-                <h3 className="font-serif text-2xl text-primary">Authentic Realism</h3>
-                <p className="text-muted-foreground font-light leading-relaxed">
+                
+                <div className="space-y-4">
+                  <h3 className="font-serif text-2xl md:text-3xl text-primary group-hover:text-accent transition-colors duration-300">
+                    Authentic Realism
+                  </h3>
+                  <div className="w-16 h-1 bg-gradient-to-r from-accent to-transparent rounded-full" />
+                  <p className="text-muted-foreground font-light leading-relaxed text-sm">
                     Botanicals selected for their tactile truth. We source only the finest artificial elements that mimic nature's imperfections.
-                </p>
-            </div>
-            <div className="space-y-4 p-8 rounded-3xl bg-secondary/10 hover:bg-secondary/20 transition-colors">
-                <div className="w-12 h-12 rounded-full bg-white border border-secondary flex items-center justify-center text-primary shadow-sm mb-6 mx-auto md:mx-0">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="m14.31 8 5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83M16.62 12l-5.74 9.94"/></svg>
+                  </p>
                 </div>
-                 <h3 className="font-serif text-2xl text-primary">Spatial Harmony</h3>
-                <p className="text-muted-foreground font-light leading-relaxed">
+
+                {/* Decorative Corner Element */}
+                <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-accent/5 to-transparent rounded-tl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="group relative md:mt-8">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-[2rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative h-full p-10 rounded-[2rem] bg-white border border-border shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 space-y-6">
+                {/* Number Badge */}
+                <div className="flex items-start justify-between">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center text-primary text-sm font-bold border border-primary/20">
+                    02
+                  </div>
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/10 to-transparent flex items-center justify-center text-primary transform group-hover:rotate-12 group-hover:scale-110 transition-transform duration-500">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="m14.31 8 5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83M16.62 12l-5.74 9.94"/></svg>
+                  </div>
+                </div>
+                
+                <div className="space-y-4">
+                  <h3 className="font-serif text-2xl md:text-3xl text-primary group-hover:text-primary/80 transition-colors duration-300">
+                    Spatial Harmony
+                  </h3>
+                  <div className="w-16 h-1 bg-gradient-to-r from-primary to-transparent rounded-full" />
+                  <p className="text-muted-foreground font-light leading-relaxed text-sm">
                     Installations designed to breathe with your space. Our arrangements augment architecture rather than overwhelming it.
-                </p>
-            </div>
-            <div className="space-y-4 p-8 rounded-3xl bg-secondary/10 hover:bg-secondary/20 transition-colors">
-                 <div className="w-12 h-12 rounded-full bg-white border border-secondary flex items-center justify-center text-primary shadow-sm mb-6 mx-auto md:mx-0">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                  </p>
                 </div>
-                 <h3 className="font-serif text-2xl text-primary">Lasting Beauty</h3>
-                <p className="text-muted-foreground font-light leading-relaxed">
-                    Elegance that endures. Invest in décor that remains vibrant year-round without the need for constant maintenance.
-                </p>
+
+                {/* Decorative Corner Element */}
+                <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-primary/5 to-transparent rounded-tl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </div>
             </div>
+
+            {/* Card 3 */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-secondary/30 to-accent/20 rounded-[2rem] blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="relative h-full p-10 rounded-[2rem] bg-white border border-border shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 space-y-6">
+                {/* Number Badge */}
+                <div className="flex items-start justify-between">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-secondary/30 to-secondary/10 flex items-center justify-center text-primary text-sm font-bold border border-secondary/30">
+                    03
+                  </div>
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-secondary/20 to-transparent flex items-center justify-center text-primary transform group-hover:rotate-12 group-hover:scale-110 transition-transform duration-500">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                  </div>
+                </div>
+                
+                <div className="space-y-4">
+                  <h3 className="font-serif text-2xl md:text-3xl text-primary group-hover:text-accent transition-colors duration-300">
+                    Lasting Beauty
+                  </h3>
+                  <div className="w-16 h-1 bg-gradient-to-r from-accent to-transparent rounded-full" />
+                  <p className="text-muted-foreground font-light leading-relaxed text-sm">
+                    Elegance that endures. Invest in décor that remains vibrant year-round without the need for constant maintenance.
+                  </p>
+                </div>
+
+                {/* Decorative Corner Element */}
+                <div className="absolute bottom-0 right-0 w-32 h-32 bg-gradient-to-tl from-secondary/10 to-transparent rounded-tl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Accent */}
+          <div className="mt-16 flex items-center justify-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+            <div className="w-2 h-2 rounded-full bg-primary animate-pulse delay-100" />
+            <div className="w-2 h-2 rounded-full bg-secondary animate-pulse delay-200" />
+          </div>
         </div>
       </section>
 
