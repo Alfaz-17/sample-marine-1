@@ -5,12 +5,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, Play } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 export function AuraHeroSection() {
-    const { scrollY } = useScroll();
-    const y1 = useTransform(scrollY, [0, 500], [0, 200]);
-    const y2 = useTransform(scrollY, [0, 500], [0, -150]);
 
     return (
         <main className="relative bg-background overflow-hidden min-h-[95vh] flex items-center justify-center pt-32 pb-16 lg:pt-32 lg:pb-0">
@@ -88,7 +85,7 @@ export function AuraHeroSection() {
                 {/* Visual Content - Cinematic Frame with Advanced Animations */}
                 <motion.div 
                     suppressHydrationWarning
-                    style={{ y: y1, perspective: "2000px", transformStyle: "preserve-3d" }}
+                    style={{ perspective: "2000px", transformStyle: "preserve-3d" }}
                     initial={{ opacity: 0, scale: 0.9, rotateY: -15, filter: "blur(20px)" }}
                     animate={{ 
                         opacity: 1, 
@@ -126,6 +123,8 @@ export function AuraHeroSection() {
                                 src="/main-refined.png" 
                                 alt="Aura Flower Shop Storefront"
                                 fill
+                                sizes="(max-width: 1024px) 100vw, 50vw"
+                                quality={90}
                                 className="object-cover"
                                 priority
                             />

@@ -6,6 +6,9 @@ import { ArrowLeft, Plus } from "lucide-react"
 import { getItems } from '@/app/actions'
 import { COLLECTIONS, type CollectionType } from '@/lib/item-types'
 
+// Enable ISR - revalidate every hour
+export const revalidate = 3600
+
 export default async function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const title = slug.charAt(0).toUpperCase() + slug.slice(1).replace("-", " ")
@@ -55,6 +58,8 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
                       src={item.images?.[0] || "/placeholder.svg"}
                       alt={item.title}
                       fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      quality={85}
                       className="object-cover transition-transform duration-1000 group-hover:scale-105"
                     />
                   </Link>

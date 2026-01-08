@@ -1,5 +1,6 @@
 'use server'
 
+import { cache } from 'react'
 import { revalidatePath } from 'next/cache'
 import connectDB from '@/lib/db'
 import Item from '@/lib/models/Item'
@@ -83,16 +84,20 @@ export async function createItem(formData: FormData) {
   return { success: true, item: JSON.parse(JSON.stringify(item)) }
 }
 
-export async function getItems(category?: CollectionType) {
+export const getItems = cache(async (category?: CollectionType) => {
   await connectDB()
 
   const query = category ? { category } : {}
-  const items = await Item.find(query).sort({ createdAt: -1 }).lean()
+  // Only select fields needed for listing views to reduce data transfer
+  const items = await Item.find(query)
+    .select('_id title slug description category images price dimensions material createdAt')
+    .sort({ createdAt: -1 })
+    .lean()
 
   return JSON.parse(JSON.stringify(items))
-}
+})
 
-export async function getItemBySlug(slug: string) {
+export const getItemBySlug = cache(async (slug: string) => {
   await connectDB()
 
   const item = await Item.findOne({ slug }).lean()
@@ -102,7 +107,7 @@ export async function getItemBySlug(slug: string) {
   }
 
   return JSON.parse(JSON.stringify(item))
-}
+})
 
 export async function updateItem(id: string, formData: FormData) {
   await requireAdmin()

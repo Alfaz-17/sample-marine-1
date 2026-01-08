@@ -5,6 +5,9 @@ import { Footer } from '@/components/footer'
 import { ArrowLeft, Plus } from 'lucide-react'
 import { notFound } from 'next/navigation'
 
+// Enable ISR - revalidate every hour
+export const revalidate = 3600
+
 export async function generateStaticParams() {
   const items = await getItems()
   return items.map((item: any) => ({
@@ -43,6 +46,9 @@ export default async function ItemPage({ params }: { params: Promise<{ slug: str
                         src={image}
                         alt={`${item.title} - Image ${idx + 1}`}
                         fill
+                        sizes="(max-width: 1024px) 50vw, 25vw"
+                        quality={90}
+                        priority={idx === 0}
                         className="object-cover"
                       />
                     </div>
